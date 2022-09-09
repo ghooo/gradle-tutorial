@@ -13,3 +13,21 @@ task createZip(type: Zip) {
   destinationDirectory = file("build/dist")
   dependsOn copyDocs
 }
+
+task createTar(type: Tar) {
+  doFirst {
+    println "Tarring some files"
+  }
+
+  from "docs"
+  include "*.txt"
+  includeEmptyDirs = false
+
+  rename '(.*.)txt', '$1text'
+
+  compression = Compression.GZIP
+}
+
+task createArchive {
+  dependsOn createTar
+}
