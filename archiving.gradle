@@ -1,0 +1,13 @@
+task copyDocs(type: Copy) {
+  from "docs"
+  into "build/docs"
+  include "**/*md"
+  includeEmptyDirs = false
+}
+
+task createZip(type: Zip) {
+  from "docs"
+  archiveFileName = "docs.zip"
+  destinationDirectory = file("build/dist")
+  dependsOn copyDocs
+}
