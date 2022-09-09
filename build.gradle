@@ -1,3 +1,4 @@
+// Run using `gradlew helloWorld` from current directory.
 task helloWorld {
     doLast {
         println "Hello world"
