@@ -1,7 +1,7 @@
 // Run using `gradlew helloWorld` from current directory.
 task helloWorld {
     doLast {
-        println "Hello world"
+        println "Hello world, version = " + version
     }
 }
 
