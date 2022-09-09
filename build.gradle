@@ -22,4 +22,5 @@ task createZip(type: Zip) {
   from "docs"
   archiveFileName = "docs.zip"
   destinationDirectory = file("build/dist")
+  dependsOn copyDocs
 }
